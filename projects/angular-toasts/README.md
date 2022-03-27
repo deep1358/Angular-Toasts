@@ -15,6 +15,8 @@ $ npm install --save angular-toasts
 - Can set postion, duration, and other options.
 - Dark and light mode.
 
+#### **[Demo](https://angular-toasts.vercel.app/) will clear a picture.**
+
 ## Setup
 
 **Step 1** : Just import **ToastModule** from **angular-toasts** in Module file, and add it in a **imports array** like below.

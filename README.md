@@ -2,7 +2,7 @@
 
 This is a Demo project for a lightweight Angular toast library **Angular Toasts** for Angular apps.
 
-Live [DEMO](https://www.npmjs.com/package/angular-toasts)
+Live [DEMO](https://angular-toasts.vercel.app/)
 
 You can download **Angular Toasts** using below command:
 
