@@ -135,6 +135,24 @@ There are total 4 functions available to show toast.
   this._toast.warning("Warning", "This is a warning message");
   ```
 
+## Theme
+
+- **Theme-1**
+
+   <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-1.jpg?raw=true" width="300px;" alt="theme-1"/>
+
+- **Theme-2**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-2.jpg?raw=true" width="300px;" alt="theme-2"/>
+
+- **Theme-3**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-3.jpg?raw=true" width="300px;" alt="theme-3"/>
+
+- **Theme-4**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-4.jpg?raw=true" width="300px;" alt="theme-4"/>
+
 **Firts parameter is title, second is message, and third is options which is optional.**
 
 **To show only message leave the title empty.**
