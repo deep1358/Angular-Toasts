@@ -1,0 +1,141 @@
+<!-------------------------Toast Container------------------------->
+
+<div class="toast-container" #toastContainer>
+  <!--------------------ZoomFromBottom-------------------->
+
+  <ng-container *ngIf="topOrBottom === 'bottom' && zoom">
+    <div
+      [@zoomFromBottom]
+      *ngFor="let toast of Toasts; let i = index"
+      class="toast toast-{{ toast.type }} {{ toast.theme }}"
+    >
+      <div class="toast-image">
+        <span *ngIf="toast.type === 'success'">&#10004;</span>
+        <span *ngIf="toast.type === 'warning'">!</span>
+        <span *ngIf="toast.type === 'info'">i</span>
+        <span *ngIf="toast.type === 'error'">&#10005;</span>
+      </div>
+      <div class="toast-content">
+        <h4>{{ toast.title }}</h4>
+        <p>{{ toast.message }}</p>
+      </div>
+      <button (click)="closeToast(i)">&times;</button>
+    </div>
+  </ng-container>
+
+  <!--------------------ZoomFromTop-------------------->
+
+  <ng-container *ngIf="topOrBottom === 'top' && zoom">
+    <div
+      [@zoomFromTop]
+      *ngFor="let toast of Toasts; let i = index"
+      class="toast toast-{{ toast.type }} {{ toast.theme }}"
+    >
+      <div class="toast-image">
+        <span *ngIf="toast.type === 'success'">&#10004;</span>
+        <span *ngIf="toast.type === 'warning'">!</span>
+        <span *ngIf="toast.type === 'info'">i</span>
+        <span *ngIf="toast.type === 'error'">&#10005;</span>
+      </div>
+      <div class="toast-content">
+        <h4>{{ toast.title }}</h4>
+        <p>{{ toast.message }}</p>
+      </div>
+      <button (click)="closeToast(i)">&times;</button>
+    </div>
+  </ng-container>
+
+  <!--------------------BounceFromLeft-------------------->
+
+  <ng-container *ngIf="leftOrRightOrCenter === 'left' && bounce">
+    <div
+      [@bounceFromLeft]
+      *ngFor="let toast of Toasts; let i = index"
+      class="toast toast-{{ toast.type }} {{ toast.theme }}"
+    >
+      <div class="toast-image">
+        <span *ngIf="toast.type === 'success'">&#10004;</span>
+        <span *ngIf="toast.type === 'warning'">!</span>
+        <span *ngIf="toast.type === 'info'">i</span>
+        <span *ngIf="toast.type === 'error'">&#10005;</span>
+      </div>
+      <div class="toast-content">
+        <h4>{{ toast.title }}</h4>
+        <p>{{ toast.message }}</p>
+      </div>
+      <button (click)="closeToast(i)">&times;</button>
+    </div>
+  </ng-container>
+
+  <!--------------------BounceFromRight-------------------->
+
+  <ng-container *ngIf="leftOrRightOrCenter === 'right' && bounce">
+    <div
+      [@bounceFromRight]
+      *ngFor="let toast of Toasts; let i = index"
+      class="toast toast-{{ toast.type }} {{ toast.theme }}"
+    >
+      <div class="toast-image">
+        <span *ngIf="toast.type === 'success'">&#10004;</span>
+        <span *ngIf="toast.type === 'warning'">!</span>
+        <span *ngIf="toast.type === 'info'">i</span>
+        <span *ngIf="toast.type === 'error'">&#10005;</span>
+      </div>
+      <div class="toast-content">
+        <h4>{{ toast.title }}</h4>
+        <p>{{ toast.message }}</p>
+      </div>
+      <button (click)="closeToast(i)">&times;</button>
+    </div>
+  </ng-container>
+
+  <!--------------------BounceFromTopCenter-------------------->
+
+  <ng-container
+    *ngIf="leftOrRightOrCenter === 'center' && topOrBottom === 'top' && bounce"
+  >
+    <div
+      [@bounceFromTopCenter]
+      *ngFor="let toast of Toasts; let i = index"
+      class="toast toast-{{ toast.type }} {{ toast.theme }}"
+    >
+      <div class="toast-image">
+        <span *ngIf="toast.type === 'success'">&#10004;</span>
+        <span *ngIf="toast.type === 'warning'">!</span>
+        <span *ngIf="toast.type === 'info'">i</span>
+        <span *ngIf="toast.type === 'error'">&#10005;</span>
+      </div>
+      <div class="toast-content">
+        <h4>{{ toast.title }}</h4>
+        <p>{{ toast.message }}</p>
+      </div>
+      <button (click)="closeToast(i)">&times;</button>
+    </div>
+  </ng-container>
+
+  <!--------------------BounceFromBottomCenter-------------------->
+
+  <ng-container
+    *ngIf="
+      leftOrRightOrCenter === 'center' && topOrBottom === 'bottom' && bounce
+    "
+  >
+    <div
+      [@bounceFromBottomCenter]
+      *ngFor="let toast of Toasts; let i = index"
+      class="toast toast-{{ toast.type }} {{ toast.theme }}"
+    >
+      <div class="toast-image">
+        <span *ngIf="toast.type === 'success'">&#10004;</span>
+        <span *ngIf="toast.type === 'warning'">!</span>
+        <span *ngIf="toast.type === 'info'">i</span>
+        <span *ngIf="toast.type === 'error'">&#10005;</span>
+      </div>
+      <div class="toast-content">
+        <h4>{{ toast.title }}</h4>
+        <p>{{ toast.message }}</p>
+      </div>
+      <button (click)="closeToast(i)">&times;</button>
+    </div>
+  </ng-container>
+</div>

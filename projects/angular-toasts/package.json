@@ -1,0 +1,23 @@
+{
+  "name": "angular-toasts",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "keywords": [
+    "angular",
+    "toasts",
+    "angular-toast",
+    "angular-toasts"
+  ],
+  "description": "🎉 Angular-Toasts is very easy to use and very powerful Toast library for Angular apps.",
+  "bugs": {
+    "url": "https://github.com/deep1358/Angular-Toasts/issues"
+  },
+  "homepage": "https://github.com/deep1358/Angular-Toasts#readme",
+  "author": "iamdeep"
+}

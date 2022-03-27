@@ -1,0 +1,267 @@
+.main-container {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 900px;
+  height: fit-content;
+  margin-top: 2vh;
+}
+
+h2 {
+  font-weight: 400;
+  color: rgb(22, 255, 243);
+}
+
+header {
+  font-size: 3em;
+  color: rgb(22, 255, 243);
+}
+
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  background-color: rgb(38, 49, 48);
+  border-radius: 0.2rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(172, 172, 172);
+}
+
+input[type="radio"] {
+  opacity: 0;
+  margin-right: 8px;
+  position: absolute;
+  z-index: -1;
+}
+
+.msgTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.title,
+.msg {
+  width: 400px;
+  margin: 0.5rem 0;
+}
+
+.msg {
+  margin-bottom: 0;
+}
+
+.globalOptions,
+.individualOptions,
+.types {
+  width: 70%;
+}
+
+.globalOptions > h2,
+.individualOptions > h2,
+.types > h2 {
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 1rem;
+}
+
+.types label {
+  font-weight: 300;
+  position: relative;
+  margin-right: 1em;
+  padding-left: 2em;
+  padding-right: 1em;
+  line-height: 2;
+  cursor: pointer;
+  display: flex;
+  transition: all 0.3s;
+}
+
+.types label:before {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top: 0.3em;
+  left: 0px;
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 2px solid rgb(22, 255, 243);
+  border-radius: 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+.types input[type="radio"]:checked + label:before {
+  top: 0px;
+  width: 100%;
+  height: 2em;
+  background: rgba(22, 255, 243, 0.3);
+  z-index: 1;
+}
+
+.types input[type="radio"]:checked + label {
+  color: white;
+  z-index: 2;
+  padding-left: 1em;
+}
+
+.theme label,
+.autoclose label,
+.effect label,
+.position label {
+  margin-right: 0.5rem;
+}
+
+.buttonControls {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.buttonControls button {
+  margin: 1rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  background-color: rgb(29, 216, 207);
+  cursor: pointer;
+  color: rgb(38, 49, 48);
+  transition: all 0.2s ease-in-out;
+  font-weight: 550;
+}
+
+.buttonControls button:hover {
+  background-color: rgb(38, 49, 48);
+  color: rgb(22, 255, 243);
+}
+
+.note {
+  background-color: rgb(29, 216, 207);
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  border-radius: 0.3rem;
+  margin-bottom: 5vh;
+}
+
+.note span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  margin-right: 0.5rem;
+  border: 3px solid rgb(38, 49, 48);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.note h3 {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.note h3,
+.note p,
+.note span {
+  background-color: inherit;
+  color: rgb(38, 49, 48);
+}
+.note p {
+  font-weight: 550;
+}
+
+@media (max-width: 950px) {
+  .main-container {
+    width: 100%;
+  }
+  .globalOptions,
+  .individualOptions,
+  .types {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .globalOptions,
+  .individualOptions,
+  .types {
+    width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .globalOptions .options,
+  .individualOptions .options {
+    flex-direction: column;
+  }
+
+  .theme,
+  .effect,
+  .autoclose,
+  .position {
+    margin: 0.5rem 0;
+  }
+}
+@media (max-width: 480px) {
+  .options {
+    flex-direction: column;
+  }
+  .radio {
+    margin: 0.3rem 0;
+  }
+}
+@media (max-width: 425px) {
+  header {
+    font-size: 2.5em;
+  }
+  .title,
+  .msg {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .note {
+    text-align: center;
+    width: 98%;
+    padding: 0.5rem 0.2em;
+  }
+  .note h3 {
+    font-size: 1em;
+  }
+  .note p,
+  .note span {
+    font-size: 0.8em;
+  }
+  .autoclose {
+    text-align: center;
+  }
+}
+@media (max-width: 370px) {
+  .buttonControls {
+    flex-direction: column;
+  }
+  button {
+    min-width: 200px;
+  }
+}
+@media (max-width: 325px) {
+  header {
+    font-size: 2em;
+  }
+}

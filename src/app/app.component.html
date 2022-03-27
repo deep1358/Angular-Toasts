@@ -1,0 +1,150 @@
+<ToastContainer
+  [theme]="globalTheme"
+  [autoClose]="globalAutoClose"
+  [effect]="globalEffect"
+  [position]="globalPosition"
+></ToastContainer>
+
+<div class="main-container">
+  <header>Angular Toasts</header>
+
+  <div class="msgTitle">
+    <input
+      [(ngModel)]="toastTitle"
+      type="text"
+      class="title"
+      placeholder="Title"
+    />
+    <textarea
+      [(ngModel)]="toastMessage"
+      type="text"
+      class="msg"
+      placeholder="Message"
+      rows="4"
+    ></textarea>
+  </div>
+
+  <div class="types">
+    <h2>Types</h2>
+    <div class="options">
+      <div class="radio">
+        <input
+          [(ngModel)]="type"
+          id="success"
+          type="radio"
+          name="type"
+          value="success"
+        />
+        <label for="success">Success</label>
+      </div>
+      <div class="radio">
+        <input
+          [(ngModel)]="type"
+          id="error"
+          type="radio"
+          name="type"
+          value="error"
+        />
+        <label for="error">Error</label>
+      </div>
+      <div class="radio">
+        <input
+          [(ngModel)]="type"
+          id="info"
+          type="radio"
+          name="type"
+          value="info"
+        />
+        <label for="info">Info</label>
+      </div>
+      <div class="radio">
+        <input
+          [(ngModel)]="type"
+          id="warning"
+          type="radio"
+          name="type"
+          value="warning"
+        />
+        <label for="warning">Warning</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="globalOptions">
+    <h2>Global Options</h2>
+    <div class="options">
+      <div class="theme">
+        <label for="globalTheme">Theme</label>
+        <select id="globalTheme" [(ngModel)]="globalTheme">
+          <option value="theme-1">Theme 1</option>
+          <option value="theme-2">Theme 2</option>
+          <option value="theme-3">Theme 3</option>
+          <option value="theme-4">Theme 4</option>
+        </select>
+      </div>
+      <div class="autoclose">
+        <label for="globalAutoClose">Auto Close</label>
+        <input
+          type="number"
+          [(ngModel)]="globalAutoClose"
+          id="globalAutoClose"
+          value="2000"
+        />
+      </div>
+      <div class="effect">
+        <label for="globalEffect">Effect</label>
+        <select id="globalEffect" [(ngModel)]="globalEffect">
+          <option value="zoom">Zoom</option>
+          <option value="bounce">Bounce</option>
+        </select>
+      </div>
+      <div class="position">
+        <label for="globalPosition">Position</label>
+        <select id="globalPosition" [(ngModel)]="globalPosition">
+          <option value="top-center">Top Center</option>
+          <option value="top-right">Top Right</option>
+          <option value="top-left">Top Left</option>
+          <option value="bottom-center">Bottom Center</option>
+          <option value="bottom-right">Bottom Right</option>
+          <option value="bottom-left">Bottom Left</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="individualOptions">
+    <h2>Individual Options</h2>
+    <div class="options">
+      <div class="theme">
+        <label for="individualTheme">Theme</label>
+        <select id="individualTheme" [(ngModel)]="individualTheme">
+          <option value="select">Select a theme</option>
+          <option value="theme-1">Theme 1</option>
+          <option value="theme-2">Theme 2</option>
+          <option value="theme-3">Theme 3</option>
+          <option value="theme-4">Theme 4</option>
+        </select>
+      </div>
+      <div class="autoclose">
+        <label for="individualAutoClose">Auto Close</label>
+        <input
+          type="number"
+          id="individualAutoClose"
+          [(ngModel)]="individualAutoClose"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="buttonControls">
+    <button (click)="showToast()">Show Toast</button>
+    <button (click)="closeAllToast()">Clear All</button>
+    <button (click)="reset()">Reset</button>
+  </div>
+
+  <div class="note">
+    <span>!</span>
+    <h3>Note</h3>
+    <p>IndividualOptions will override globalOptions.</p>
+  </div>
+</div>
