@@ -17,18 +17,18 @@ $ npm install --save angular-toasts
 
 ## Setup
 
-**Step 1** : Just import **ToastModule** from **angular-toasts** in Module file, and add it in a **imports array** like below.
+**Step 1** : Just import **AngularToastModule** from **angular-toasts** in Module file, and add it in a **imports array** like below.
 
 ```typescript
-import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { ToastModule } from "angular-toasts";
+import { NgModule } from "@angular/core";
+import { AngularToastModule } from "angular-toasts";
 
 import { AppComponent } from "./app.component";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, ToastModule],
+  imports: [BrowserModule, AngularToastModule],
   providers: [],
   bootstrap: [AppComponent],
 })
@@ -43,18 +43,19 @@ export class AppModule {}
 
 ## Usage
 
-For usage purpose, you can use **ToastService** to show toast (i.e. in your **app.component.ts** file).
+For usage purpose, you can use **AngularToastService** to show toast (i.e. in your **app.component.ts** file).
 
 ```typescript
 import { Component } from "@angular/core";
-import { ToastService } from "angular-toasts";
+import { AngularToastService } from "angular-toasts";
+
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  constructor(private _toast: ToastService) {}
+  constructor(private _toast: AngularToastService) {}
 
   Click() {
     this._toast.success("Success", "This is a success message");

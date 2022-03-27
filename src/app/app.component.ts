@@ -74,4 +74,9 @@ export class AppComponent {
     this.individualTheme = 'select';
     this.individualAutoClose = '';
   }
+
+  copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text);
+    this._toast.success('', 'Copied to clipboard', { theme: 'theme-4' });
+  }
 }

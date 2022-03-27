@@ -9,7 +9,13 @@
   margin-top: 2vh;
 }
 
-h2 {
+.main-container > h1 {
+  margin: 1vh 0 -1.5vh 0;
+}
+
+h1,
+h2,
+h3 {
   font-weight: 400;
   color: rgb(22, 255, 243);
 }
@@ -17,6 +23,7 @@ h2 {
 header {
   font-size: 3em;
   color: rgb(22, 255, 243);
+  margin-bottom: 1vh;
 }
 
 input,
@@ -39,6 +46,53 @@ input[type="radio"] {
   margin-right: 8px;
   position: absolute;
   z-index: -1;
+}
+
+.install {
+  margin: 1vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.code {
+  margin-top: 1.5rem;
+  background-color: rgb(38, 49, 48);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: rgb(172, 172, 172);
+  border-radius: 0.2rem;
+  letter-spacing: 1px;
+}
+
+.code span {
+  margin-left: 2rem;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.visitNpm {
+  margin: 1vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  text-align: center;
+}
+
+.visitNpm > a {
+  margin-top: 1rem;
+  color: rgb(22, 255, 243);
+  background-color: rgb(38, 49, 48);
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 .msgTitle {
@@ -250,6 +304,20 @@ input[type="radio"] {
   }
   .autoclose {
     text-align: center;
+  }
+}
+@media (max-width: 390px) {
+  .install {
+    width: 100%;
+  }
+  .code {
+    font-size: 0.7em;
+    padding: 0.5rem 0.3rem;
+    width: 98%;
+  }
+  .install span {
+    font-size: 0.75rem;
+    margin-left: 2px;
   }
 }
 @media (max-width: 370px) {
