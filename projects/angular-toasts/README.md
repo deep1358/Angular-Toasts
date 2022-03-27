@@ -15,8 +15,6 @@ $ npm install --save angular-toasts
 - Can set postion, duration, and other options.
 - Dark and light mode.
 
-#### **[Demo](https://angular-toasts.vercel.app/) will clear a picture.**
-
 ## Setup
 
 **Step 1** : Just import **ToastModule** from **angular-toasts** in Module file, and add it in a **imports array** like below.
@@ -48,21 +46,39 @@ export class AppModule {}
 For usage purpose, you can use **ToastService** to show toast (i.e. in your **app.component.ts** file).
 
 ```typescript
-import { Component } from '@angular/core';
-import { ToastService } from 'angular-toasts';
+import { Component } from "@angular/core";
+import { ToastService } from "angular-toasts";
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
   constructor(private _toast: ToastService) {}
 
   Click() {
-    this._toast.success('Success', 'This is a info message',);
+    this._toast.success("Success", "This is a success message");
+  }
 }
-
 ```
+
+## Themes
+
+- **Theme-1**
+
+   <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-1.jpg?raw=true" width="250px;" alt="theme-1"/>
+
+- **Theme-2**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-2.jpg?raw=true" width="250px;" alt="theme-2"/>
+
+- **Theme-3**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-3.jpg?raw=true" width="250px;" alt="theme-3"/>
+
+- **Theme-4**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-4.jpg?raw=true" width="250px;" alt="theme-4"/>
 
 ## Options
 
@@ -135,24 +151,6 @@ There are total 4 functions available to show toast.
   this._toast.warning("Warning", "This is a warning message");
   ```
 
-## Theme
-
-- **Theme-1**
-
-   <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-1.jpg?raw=true" width="300px;" alt="theme-1"/>
-
-- **Theme-2**
-
-  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-2.jpg?raw=true" width="300px;" alt="theme-2"/>
-
-- **Theme-3**
-
-  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-3.jpg?raw=true" width="300px;" alt="theme-3"/>
-
-- **Theme-4**
-
-  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-4.jpg?raw=true" width="300px;" alt="theme-4"/>
-
 **Firts parameter is title, second is message, and third is options which is optional.**
 
 **To show only message leave the title empty.**
@@ -160,3 +158,9 @@ There are total 4 functions available to show toast.
 ```typescript
 this._toast.warning("", "This is a warning message");
 ```
+
+**So it will look like this**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/notitle.jpg?raw=true" width="250px;" alt="Toast without title"/>
+
+#### **[Demo](https://angular-toasts.vercel.app/) will clear a picture.**
