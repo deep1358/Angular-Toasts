@@ -91,8 +91,6 @@ export class AngularToastService {
   ) {
     // ----------------Add toast from front when position is bottom---------------
 
-    console.log(options.timeOut, this.autoClose);
-
     if (this.topOrBottom.value === 'bottom') {
       this.Toasts.unshift({
         title,
