@@ -14,6 +14,8 @@ export class AngularToastService {
   autoClose!: string;
   theme!: string;
   effect!: string;
+  hideCloseButton!: string;
+  hideImage!: string;
 
   // --------------------Toast observables--------------------
 
@@ -34,6 +36,8 @@ export class AngularToastService {
     options: {
       timeOut?: string;
       theme?: string;
+      hideCloseButton?: string;
+      hideImage?: string;
     } = {}
   ) {
     this.showToast(title, message, 'success', options);
@@ -47,6 +51,8 @@ export class AngularToastService {
     options: {
       timeOut?: string;
       theme?: string;
+      hideCloseButton?: string;
+      hideImage?: string;
     } = {}
   ) {
     this.showToast(title, message, 'error', options);
@@ -60,6 +66,8 @@ export class AngularToastService {
     options: {
       timeOut?: string;
       theme?: string;
+      hideCloseButton?: string;
+      hideImage?: string;
     } = {}
   ) {
     this.showToast(title, message, 'info', options);
@@ -73,9 +81,41 @@ export class AngularToastService {
     options: {
       timeOut?: string;
       theme?: string;
+      hideCloseButton?: string;
+      hideImage?: string;
     } = {}
   ) {
     this.showToast(title, message, 'warning', options);
+  }
+
+  // --------------------Light Toast--------------------
+
+  light(
+    title: string,
+    message: string,
+    options: {
+      timeOut?: string;
+      hideCloseButton?: string;
+      hideImage?: string;
+      imageUrl?: string;
+    } = {}
+  ) {
+    this.showToast(title, message, 'light', { ...options, theme: 'default' });
+  }
+
+  // --------------------Light Toast--------------------
+
+  dark(
+    title: string,
+    message: string,
+    options: {
+      timeOut?: string;
+      hideCloseButton?: string;
+      hideImage?: string;
+      imageUrl?: string;
+    } = {}
+  ) {
+    this.showToast(title, message, 'dark', { ...options, theme: 'default' });
   }
 
   // --------------------Show Toast function--------------------
@@ -87,6 +127,9 @@ export class AngularToastService {
     options: {
       timeOut?: string;
       theme?: string;
+      hideCloseButton?: string;
+      hideImage?: string;
+      imageUrl?: string;
     } = {}
   ) {
     // ----------------Add toast from front when position is bottom---------------
@@ -98,6 +141,9 @@ export class AngularToastService {
         type,
         timeOut: options.timeOut || this.autoClose,
         theme: options.theme || this.theme,
+        hideCloseButton: options.hideCloseButton || this.hideCloseButton,
+        hideImage: options.hideImage || this.hideImage,
+        imageUrl: '',
       });
 
       setTimeout(() => {
@@ -114,6 +160,9 @@ export class AngularToastService {
         type,
         timeOut: options.timeOut || this.autoClose,
         theme: options.theme || this.theme,
+        hideCloseButton: options.hideCloseButton || this.hideCloseButton,
+        hideImage: options.hideImage || this.hideImage,
+        imageUrl: '',
       });
 
       setTimeout(() => {

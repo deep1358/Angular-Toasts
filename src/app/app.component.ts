@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { AngularToastService } from 'projects/angular-toasts/src/public-api';
 
 @Component({
@@ -13,23 +13,51 @@ export class AppComponent {
   type: string = 'success';
 
   globalTheme: string = 'theme-1';
-  globalAutoClose: string = '2000';
+  globalAutoClose: string = '200000';
   globalEffect: string = 'zoom';
   globalPosition: string = 'top-right';
+  globalHideCloseButton: boolean = false;
+  globalHideImage: boolean = false;
 
   individualTheme: string = 'select';
   individualAutoClose: string = '';
+  individualHideCloseButton!: boolean;
+  individualHideImage!: boolean;
+
+  @ViewChild('hideCloseButton') hideCloseButtonRef!: ElementRef;
+  @ViewChild('hideImage') hideImageRef!: ElementRef;
 
   constructor(private _toast: AngularToastService) {}
 
   showToast() {
-    let options: { theme?: string; timeOut?: string } = {};
+    // this._toast.error('su', 'Success', {
+    //   theme: 'theme-6',
+    // });
+
+    let options: {
+      theme?: string;
+      timeOut?: string;
+      hideCloseButton?: string;
+      hideImage?: string;
+    } = {};
+
+    if (
+      this.hideCloseButtonRef.nativeElement.checked ||
+      this.hideImageRef.nativeElement.checked
+    ) {
+      options = {
+        ...options,
+        hideCloseButton: this.individualHideCloseButton?.toString() || 'false',
+        hideImage: this.individualHideImage?.toString() || 'false',
+      };
+    }
+
     if (this.individualTheme !== 'select') {
-      options = { theme: this.individualTheme };
+      options = { ...options, theme: this.individualTheme };
     }
 
     if (this.individualAutoClose) {
-      options = { timeOut: `${this.individualAutoClose}` };
+      options = { ...options, timeOut: `${this.individualAutoClose}` };
     }
 
     if (this.type === 'success') {
@@ -54,6 +82,18 @@ export class AppComponent {
       this._toast.info(
         this.toastTitle,
         this.toastMessage || 'This is info message',
+        options
+      );
+    } else if (this.type === 'light') {
+      this._toast.light(
+        this.toastTitle,
+        this.toastMessage || 'This is light message',
+        options
+      );
+    } else if (this.type === 'dark') {
+      this._toast.dark(
+        this.toastTitle,
+        this.toastMessage || 'This is dark message',
         options
       );
     }

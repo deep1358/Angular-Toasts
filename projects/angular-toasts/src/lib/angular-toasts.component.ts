@@ -26,13 +26,16 @@ export class AngularToastsComponent
   @Input('autoClose') ToastContainerAutoClose: string = '2000';
   @Input('effect') ToastContainerEffect: string = 'zoom';
   @Input('theme') ToastContainerTheme: string = 'theme-1';
+  @Input('hideCloseButton') ToastContainerCloseButton: string = 'false';
+  @Input('hideImage') ToastContainerHideImage: string = 'false';
   @ViewChild('toastContainer') toastContainer!: ElementRef;
 
   // --------------------Toast variables--------------------
 
   Toasts: Toast[] = [];
-  zoom: boolean = true;
+  zoom: boolean = false;
   bounce: boolean = false;
+  fade: boolean = true;
   topOrBottom: string = this.ToastContainerPosition.split('-')[0];
   leftOrRightOrCenter: string = this.ToastContainerPosition.split('-')[1];
 
@@ -57,6 +60,7 @@ export class AngularToastsComponent
     this.leftOrRightOrCenter = this.ToastContainerPosition.split('-')[1];
     this.zoom = this.ToastContainerEffect === 'zoom';
     this.bounce = this.ToastContainerEffect === 'bounce';
+    this.fade = this.ToastContainerEffect === 'fade';
   }
 
   ngAfterViewChecked(): void {
@@ -66,6 +70,8 @@ export class AngularToastsComponent
       'toast-container toast-container-' + this.ToastContainerPosition;
     this._toast.theme = this.ToastContainerTheme;
     this._toast.autoClose = this.ToastContainerAutoClose;
+    this._toast.hideCloseButton = this.ToastContainerCloseButton;
+    this._toast.hideImage = this.ToastContainerHideImage;
   }
 
   // --------------------Close Toast function--------------------

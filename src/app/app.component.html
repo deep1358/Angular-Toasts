@@ -3,6 +3,8 @@
   [autoClose]="globalAutoClose"
   [effect]="globalEffect"
   [position]="globalPosition"
+  [hideCloseButton]="globalHideCloseButton + ''"
+  [hideImage]="globalHideImage + ''"
 ></ToastContainer>
 
 <div class="main-container">
@@ -86,6 +88,26 @@
         />
         <label for="warning">Warning</label>
       </div>
+      <div class="radio">
+        <input
+          [(ngModel)]="type"
+          id="light"
+          type="radio"
+          name="type"
+          value="light"
+        />
+        <label for="light">Light</label>
+      </div>
+      <div class="radio">
+        <input
+          [(ngModel)]="type"
+          id="dark"
+          type="radio"
+          name="type"
+          value="dark"
+        />
+        <label for="dark">Dark</label>
+      </div>
     </div>
   </div>
 
@@ -99,6 +121,8 @@
           <option value="theme-2">Theme 2</option>
           <option value="theme-3">Theme 3</option>
           <option value="theme-4">Theme 4</option>
+          <option value="theme-5">Theme 5</option>
+          <option value="theme-6">Theme 6</option>
         </select>
       </div>
       <div class="autoclose">
@@ -114,6 +138,7 @@
         <label for="globalEffect">Effect</label>
         <select id="globalEffect" [(ngModel)]="globalEffect">
           <option value="zoom">Zoom</option>
+          <option value="fade">Fade</option>
           <option value="bounce">Bounce</option>
         </select>
       </div>
@@ -127,6 +152,18 @@
           <option value="bottom-right">Bottom Right</option>
           <option value="bottom-left">Bottom Left</option>
         </select>
+      </div>
+      <div class="hideCloseButton">
+        <label for="hideCloseButton">Hide Close Button</label>
+        <input
+          type="checkbox"
+          [(ngModel)]="globalHideCloseButton"
+          id="hideCloseButton"
+        />
+      </div>
+      <div class="hideImage">
+        <label for="hideImage">Hide Image</label>
+        <input type="checkbox" [(ngModel)]="globalHideImage" id="hideImage" />
       </div>
     </div>
   </div>
@@ -142,6 +179,8 @@
           <option value="theme-2">Theme 2</option>
           <option value="theme-3">Theme 3</option>
           <option value="theme-4">Theme 4</option>
+          <option value="theme-5">Theme 5</option>
+          <option value="theme-6">Theme 6</option>
         </select>
       </div>
       <div class="autoclose">
@@ -150,6 +189,24 @@
           type="number"
           id="individualAutoClose"
           [(ngModel)]="individualAutoClose"
+        />
+      </div>
+      <div class="hideCloseButton">
+        <label for="individualHideCloseButton">Hide Close Button</label>
+        <input
+          type="checkbox"
+          [(ngModel)]="individualHideCloseButton"
+          id="individualHideCloseButton"
+          #hideCloseButton
+        />
+      </div>
+      <div class="hideImage">
+        <label for="individualHideImage">Hide Image</label>
+        <input
+          type="checkbox"
+          [(ngModel)]="individualHideImage"
+          id="individualHideImage"
+          #hideImage
         />
       </div>
     </div>
