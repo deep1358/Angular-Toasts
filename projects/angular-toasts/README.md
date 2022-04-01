@@ -81,6 +81,14 @@ export class AppComponent {
 
   <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-4.jpg?raw=true" width="250px;" alt="theme-4"/>
 
+- **Theme-5**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-5.jpg?raw=true" width="250px;" alt="theme-5"/>
+
+- **Theme-6**
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/theme-6.jpg?raw=true" width="250px;" alt="theme-6"/>
+
 ## Options
 
 There are **individual** and **global** options for each toast
@@ -89,10 +97,13 @@ There are **individual** and **global** options for each toast
 
 #### Individual Options
 
-| Option  | Type   | Default   | Description                            | Parameters                                     |
-| ------- | ------ | --------- | -------------------------------------- | ---------------------------------------------- |
-| theme   | string | `theme-1` | Theme will decide the look of a toast. | `'theme-1' \|'theme-2'\|'theme-3'\| 'theme-4'` |
-| timeOut | string | 2000      | Time to live in milliseconds           | Any millisecond as a string                    |
+| Option          | Type    | Default   | Description                                                                   | Parameters                                                             |
+| --------------- | ------- | --------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| theme           | string  | `theme-1` | Theme will decide the look of a toast.                                        | `'theme-1' \|'theme-2'\|'theme-3'\| 'theme-4'\| 'theme-5'\| 'theme-6'` |
+| timeOut         | string  | 2000      | Time to live in milliseconds                                                  | Any millisecond as a string                                            |
+| hideCloseButton | boolean | false     | Hide close button                                                             | `'false'\| 'true'`                                                     |
+| hideImage       | boolean | false     | Hide image                                                                    | `'false'\| 'true'`                                                     |
+| imageUrl        | string  | ' '       | Image url (Only for light and dark type toasts) (**_Currently not working_**) | Any url as a string                                                    |
 
 ##### Setting individual options
 
@@ -100,17 +111,21 @@ There are **individual** and **global** options for each toast
 this._toast.info("Information", "This is a info message", {
   timeOut: "20000",
   theme: "theme-1",
+  hideCloseButton: "true",
+  hideImage: "true",
 });
 ```
 
 #### Global Options
 
-| Option    | Type   | Default     | Description                                                 | Parameters                                                                                        |
-| --------- | ------ | ----------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| theme     | string | `theme-1`   | Theme will decide the look of a toast.                      | `'theme-1' \|'theme-2'\|'theme-3'\| 'theme-4'`                                                    |
-| autoClose | string | 2000        | Time to live in milliseconds                                | Any millisecond as a string                                                                       |
-| effect    | string | `zoom`      | This option is for different animation of a toast.          | `'zoom' \| 'bounce'`                                                                              |
-| postion   | string | `top-right` | This option will decide the position of a toast on a scree. | `'top-right' \| 'top-center' \| 'top-left' \| 'bottom-right' \| 'bottom-center' \| 'bottom-left'` |
+| Option          | Type    | Default     | Description                                                 | Parameters                                                                                        |
+| --------------- | ------- | ----------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| theme           | string  | `theme-1`   | Theme will decide the look of a toast.                      | `'theme-1' \|'theme-2'\|'theme-3'\| 'theme-4'\|'theme-5'\|'theme-6'`                              |
+| autoClose       | string  | 2000        | Time to live in milliseconds                                | Any millisecond as a string                                                                       |
+| effect          | string  | `zoom`      | This option is for different animation of a toast.          | `'zoom' \| 'bounce' \| 'fade'`                                                                    |
+| postion         | string  | `top-right` | This option will decide the position of a toast on a scree. | `'top-right' \| 'top-center' \| 'top-left' \| 'bottom-right' \| 'bottom-center' \| 'bottom-left'` |
+| hideCloseButton | boolean | false       | Hide close button                                           | `'false'\| 'true'`                                                                                |
+| hideImage       | boolean | false       | Hide image                                                  | `'false'\| 'true'`                                                                                |
 
 ##### Setting global options
 
@@ -120,13 +135,15 @@ this._toast.info("Information", "This is a info message", {
   effect="zoom"
   autoClose="2000"
   theme="theme-1"
+  hideCloseButton="false"
+  hideImage="false"
 >
 </ToastContainer>
 ```
 
-## Functions
+## Functions(Types)
 
-There are total 4 functions available to show toast.
+There are total 6 functions available to show toast.
 
 - For **Success**
 
@@ -151,6 +168,22 @@ There are total 4 functions available to show toast.
   ```typescript
   this._toast.warning("Warning", "This is a warning message");
   ```
+
+- For **Default Light**
+
+  ```typescript
+  this._toast.light("Light theme", "This is a light theme message");
+  ```
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/light.jpg?raw=true" width="250px;" alt="light"/>
+
+- For **Default Dark**
+
+  ```typescript
+  this._toast.dark("Dark theme", "This is a dark theme message");
+  ```
+
+  <img src="https://github.com/deep1358/Angular-Toasts/blob/master/projects/angular-toasts/src/assets/dark.jpg?raw=true" width="250px;" alt="dark"/>
 
 **Firts parameter is title, second is message, and third is options which is optional.**
 

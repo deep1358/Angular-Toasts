@@ -13,7 +13,7 @@ export class AppComponent {
   type: string = 'success';
 
   globalTheme: string = 'theme-1';
-  globalAutoClose: string = '200000';
+  globalAutoClose: string = '2000';
   globalEffect: string = 'zoom';
   globalPosition: string = 'top-right';
   globalHideCloseButton: boolean = false;
@@ -30,10 +30,6 @@ export class AppComponent {
   constructor(private _toast: AngularToastService) {}
 
   showToast() {
-    // this._toast.error('su', 'Success', {
-    //   theme: 'theme-6',
-    // });
-
     let options: {
       theme?: string;
       timeOut?: string;
