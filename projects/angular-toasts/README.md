@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-$ npm install --save angular-toasts
+$ npm install angular-toasts
 ```
 
 ## Features
@@ -139,6 +139,20 @@ this._toast.info("Information", "This is a info message", {
   hideImage="false"
 >
 </ToastContainer>
+```
+
+### Longer Duration of the Toast
+
+- To make toast duration longer which seems like infinite, you can use equation in **Global option - autoClose** or in **Individual option - timeOut** like **1000\*60\*60\*24 (1 day)**.
+
+```html
+<ToastContainer autoClose="1000*60*60*24"> </ToastContainer>
+```
+
+```typescript
+this._toast.info("Information", "This is a info message", {
+  timeOut: "1000*60*60*24",
+});
 ```
 
 ## Functions(Types)

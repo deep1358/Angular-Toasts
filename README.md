@@ -7,7 +7,7 @@ Live [DEMO](https://angular-toasts.vercel.app/)
 You can download **Angular Toasts** using below command:
 
 ```bash
-$ npm install --save angular-toasts
+$ npm install angular-toasts
 ```
 
 Visit [npm](https://www.npmjs.com/package/angular-toasts) page for more information.

@@ -6,8 +6,6 @@ import { Toast } from './angular-toasts.interface';
   providedIn: 'root',
 })
 export class AngularToastService {
-  constructor() {}
-
   // --------------------Toast variables--------------------
 
   Toasts: Toast[] = [];
@@ -149,7 +147,7 @@ export class AngularToastService {
       setTimeout(() => {
         this.Toasts.pop();
         this.TotalToasts.next(this.Toasts);
-      }, parseInt(options.timeOut || this.autoClose));
+      }, parseInt(eval(options.timeOut || this.autoClose)));
     }
 
     // ----------------Add toast from back when position is top---------------
@@ -168,7 +166,7 @@ export class AngularToastService {
       setTimeout(() => {
         this.Toasts.shift();
         this.TotalToasts.next(this.Toasts);
-      }, parseInt(options.timeOut || this.autoClose));
+      }, parseInt(eval(options.timeOut || this.autoClose)));
     }
   }
 
